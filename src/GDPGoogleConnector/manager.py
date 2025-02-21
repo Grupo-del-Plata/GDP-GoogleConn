@@ -5,6 +5,8 @@ from google.oauth2.credentials import Credentials
 
 from .defaults import SCOPES, VERSIONS, CREDENTIALS_FILE, TOKEN_FILE
 
+from .SHEETS.functions import SheetsFunctions
+
 
 class GoogleConnector:
     """
@@ -46,6 +48,10 @@ class GoogleConnector:
         self.services = {}
 
         self.authenticate()
+
+        self.SHEETS = SheetsFunctions(self)  # Creates reference to sheets functions to access it's methods'
+
+
 
     def __enter__(self):
         """
@@ -99,7 +105,7 @@ class GoogleConnector:
             serv: build(serv, VERSIONS.get(serv), credentials=self.creds) for serv in self.services_list
         }
 
-    def _execute_script(self, function: str, parameters=[], script_id=None):
+    def _execute_script(self, function: str='inputReceiver', parameters=[], script_id=None):
         """
         Executes a function in the Google Apps Script.
 

@@ -7,6 +7,15 @@ The Google Apps Script Manager is a Python class designed to facilitate the auth
 
 The objective of this class is to provide a straightforward and reusable approach to interact with Google Apps Script APIs. It handles authentication, session management, and script execution, enabling users to focus on the logic of their applications rather than the intricacies of the API.
 
+## Installation
+
+To install run:
+
+```
+pip install git+ssh://git@github.com/Grupo-del-Plata/GDP-GoogleConnector.git
+```
+
+
 ## Features
 
 - **OAuth 2.0 Authentication**: Manages OAuth 2.0 credentials to authenticate the Google API.
