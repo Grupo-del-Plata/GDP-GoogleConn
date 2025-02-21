@@ -47,9 +47,12 @@ class GoogleConnector:
         self.SCRIPT_ID = SCRIPT_ID
         self.services = {}
 
+        self.SHEETS = SheetsFunctions(self)  # Creates reference to sheets functions to access it's methods'
+
+
         self.authenticate()
 
-        self.SHEETS = SheetsFunctions(self)  # Creates reference to sheets functions to access it's methods'
+
 
 
 

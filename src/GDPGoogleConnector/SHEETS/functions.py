@@ -5,9 +5,7 @@ class SheetsFunctions:
     """
     Google Sheets functions used in manager.
     """
-    def __init__(
-        manager
-    ):
+    def __init__(self, manager):
         self.manager = manager
 
     def write_data_in_sheet(self, spreadsheet_id, sheet_name, data, start_row=1, start_col=1, data_format='json'):
