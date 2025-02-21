@@ -32,7 +32,7 @@ class SheetsFunctions:
         Returns:
             list: List of dictionaries containing 'id' and 'name' of each spreadsheet.
         """
-        return self.manager._execute_script('listGoogleSheets', [])
+        return self.manager._execute_script('listSpreadsheets', [])
 
     def get_sheet_names(self, spreadsheet_id):
         """
