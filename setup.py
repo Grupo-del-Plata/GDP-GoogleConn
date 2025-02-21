@@ -7,7 +7,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='GDPGoogleConnector',
-    version='0.2.0',
+    version='1.0.0',
     description='A utility class for managing Google Apps Script executions via Python.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
