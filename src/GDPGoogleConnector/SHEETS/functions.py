@@ -1,4 +1,5 @@
-
+RESPONSE_WORD = 'response'
+RESULT_WORD = 'result'
 
 
 class SheetsFunctions:
@@ -24,7 +25,7 @@ class SheetsFunctions:
             Any: Result of the data update script execution.
         """
         parameters = [spreadsheet_id, sheet_name, data, start_row, start_col, data_format]
-        return self.manager._execute_script('writeData', parameters)
+        return self.manager._execute_script('writeData', parameters).get(RESPONSE_WORD).get(RESULT_WORD)
 
     def list_google_sheets(self):
         """
@@ -32,7 +33,7 @@ class SheetsFunctions:
         Returns:
             list: List of dictionaries containing 'id' and 'name' of each spreadsheet.
         """
-        return self.manager._execute_script('listSpreadsheets', [])
+        return self.manager._execute_script('listSpreadsheets', []).get(RESPONSE_WORD).get(RESULT_WORD)
 
     def get_sheet_names(self, spreadsheet_id):
         """
@@ -42,7 +43,7 @@ class SheetsFunctions:
         Returns:
             list: List of sheet names.
         """
-        return self.manager._execute_script('getSheetNames', [spreadsheet_id])
+        return self.manager._execute_script('getSheetNames', [spreadsheet_id]).get(RESPONSE_WORD).get(RESULT_WORD)
 
     def read_sheet_data(self, spreadsheet_id, sheet_name, start_row=1, start_col=1, end_row=None, end_col=None):
         """
@@ -58,4 +59,4 @@ class SheetsFunctions:
             list: 2D list of data from the specified range.
         """
         parameters = [spreadsheet_id, sheet_name, start_row, start_col, end_row, end_col]
-        return self.manager._execute_script('readData', parameters)
+        return self.manager._execute_script('readData', parameters).get(RESPONSE_WORD).get(RESULT_WORD)
